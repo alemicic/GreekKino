@@ -11,7 +11,8 @@ import SwiftUI
 struct GreekKinoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            RootTabView()
         }
     }
 }
