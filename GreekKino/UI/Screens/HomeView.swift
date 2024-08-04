@@ -24,12 +24,12 @@ class HomeViewModel: ObservableObject {
                 let dateString = dateFormatter.string(from: Date(timeIntervalSince1970: i.drawTime/1000))
             }
         }
-        
     }
 }
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
+    var router: HomeRoutable
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -48,7 +48,7 @@ struct HomeView: View {
         Spacer()
         ScrollView(showsIndicators: false) {
             ForEach(viewModel.items, id: \.drawId) { item in
-                DrawItemView(item: item)
+                DrawItemView(item: item, action: router.presentDrawScreen)
             }
         }
     }
@@ -56,12 +56,19 @@ struct HomeView: View {
 
 struct DrawItemView: View {
     var item: DrawModel
+    var action: (DrawModel) -> Void
     
     var body: some View {
         HStack(spacing: 0) {
             Text(time())
             Spacer()
             Text(countDown())
+        }
+        .padding(8)
+        .background(.black)
+        .foregroundStyle(.white)
+        .onTapGesture {
+            action(item)
         }
     }
     

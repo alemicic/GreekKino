@@ -20,6 +20,8 @@
 		A80F8BE02C5E408500CABD28 /* DrawEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD72C5E408400CABD28 /* DrawEndpoint.swift */; };
 		A80F8BE12C5E408500CABD28 /* DrawService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD92C5E408400CABD28 /* DrawService.swift */; };
 		A80F8BE32C5E6DBF00CABD28 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */; };
+		A80F8BE52C5F7C0100CABD28 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BE42C5F7C0100CABD28 /* DrawView.swift */; };
+		A80F8BEB2C5F8C6300CABD28 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BEA2C5F8C6300CABD28 /* HomeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		A80F8BD72C5E408400CABD28 /* DrawEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawEndpoint.swift; sourceTree = "<group>"; };
 		A80F8BD92C5E408400CABD28 /* DrawService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawService.swift; sourceTree = "<group>"; };
 		A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A80F8BE42C5F7C0100CABD28 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		A80F8BEA2C5F8C6300CABD28 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 		A80F8BB72C5E296C00CABD28 /* GreekKino */ = {
 			isa = PBXGroup;
 			children = (
+				A80F8BE92C5F8C5000CABD28 /* Routing */,
+				A80F8BE62C5F8C0300CABD28 /* UI */,
 				A80F8BCE2C5E408400CABD28 /* Client */,
 				A80F8BCA2C5E3CA000CABD28 /* RootTabRouter.swift */,
 				A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */,
@@ -76,7 +82,6 @@
 				A80F8BBA2C5E296C00CABD28 /* ContentView.swift */,
 				A80F8BBC2C5E296D00CABD28 /* Assets.xcassets */,
 				A80F8BBE2C5E296D00CABD28 /* Preview Content */,
-				A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */,
 			);
 			path = GreekKino;
 			sourceTree = "<group>";
@@ -124,6 +129,39 @@
 				A80F8BD92C5E408400CABD28 /* DrawService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		A80F8BE62C5F8C0300CABD28 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BE82C5F8C1000CABD28 /* Components */,
+				A80F8BE72C5F8C0A00CABD28 /* Screens */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A80F8BE72C5F8C0A00CABD28 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */,
+				A80F8BE42C5F7C0100CABD28 /* DrawView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A80F8BE82C5F8C1000CABD28 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A80F8BE92C5F8C5000CABD28 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BEA2C5F8C6300CABD28 /* HomeRouter.swift */,
+			);
+			path = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +240,8 @@
 				A80F8BDD2C5E408500CABD28 /* Extensions.swift in Sources */,
 				A80F8BE12C5E408500CABD28 /* DrawService.swift in Sources */,
 				A80F8BE32C5E6DBF00CABD28 /* HomeView.swift in Sources */,
+				A80F8BEB2C5F8C6300CABD28 /* HomeRouter.swift in Sources */,
+				A80F8BE52C5F7C0100CABD28 /* DrawView.swift in Sources */,
 				A80F8BCD2C5E3CA000CABD28 /* RootTabView.swift in Sources */,
 				A80F8BDC2C5E408500CABD28 /* DrawModel.swift in Sources */,
 				A80F8BB92C5E296C00CABD28 /* GreekKinoApp.swift in Sources */,

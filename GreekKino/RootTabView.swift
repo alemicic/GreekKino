@@ -12,17 +12,18 @@ struct RootTabView: View {
         case home, live, results
     }
     
-    enum ScreenNavigation: Hashable {
-        case coupon
-    }
-    
-    @State var homeNavigationPath: [ScreenNavigation] = []
+    @StateObject var router = Router()
     
     var body: some View {
-        
         TabView() {
-            NavigationStack {
-                HomeView(viewModel: HomeViewModel())
+            NavigationStack(path: $router.homeNavigationStack) {
+                HomeView(viewModel: HomeViewModel(), router: router)
+                    .navigationDestination(for: ScreenNavigation.self) { screen in
+                        switch screen {
+                            case .draw(drawModel: let drawModel):
+                                DrawView(viewModel: DrawViewModel(item: drawModel))
+                        }
+                    }
             }
             .tabItem {
                 Label("Home",

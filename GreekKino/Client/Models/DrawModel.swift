@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DrawModel: Model {
+struct DrawModel: Model, Hashable {
     let gameId: Int
     let drawId: Int
     let drawTime: Double
