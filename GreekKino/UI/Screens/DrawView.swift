@@ -40,7 +40,6 @@ struct DrawView: View {
                 Text("B.K.      1      2    3     4     5      6       7   ")
                 Text("Kvota  3.75   14   65   275   1350   6500   25000   ")
                 Text("Broj izabranih kuglica: \(viewModel.selectedCount)")
-                Text("Broj izabranih kuglica: \(viewModel.selectedCount)")
                 Text("Vreme izvlacenja: \(viewModel.item.drawTime)")
                 Text("Broj kola: \(viewModel.item.drawId)")
                 Text("Preostalo vreme za uplatu: \(viewModel.item.drawTime)")
