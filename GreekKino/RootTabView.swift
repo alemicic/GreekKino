@@ -22,7 +22,7 @@ struct RootTabView: View {
         
         TabView() {
             NavigationStack {
-                ContentView()
+                HomeView(viewModel: HomeViewModel())
             }
             .tabItem {
                 Label("Home",

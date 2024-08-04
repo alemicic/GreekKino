@@ -11,6 +11,15 @@
 		A80F8BBB2C5E296C00CABD28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BBA2C5E296C00CABD28 /* ContentView.swift */; };
 		A80F8BBD2C5E296D00CABD28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80F8BBC2C5E296D00CABD28 /* Assets.xcassets */; };
 		A80F8BC02C5E296D00CABD28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80F8BBF2C5E296D00CABD28 /* Preview Assets.xcassets */; };
+		A80F8BCC2C5E3CA000CABD28 /* RootTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BCA2C5E3CA000CABD28 /* RootTabRouter.swift */; };
+		A80F8BCD2C5E3CA000CABD28 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */; };
+		A80F8BDC2C5E408500CABD28 /* DrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD22C5E408400CABD28 /* DrawModel.swift */; };
+		A80F8BDD2C5E408500CABD28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD32C5E408400CABD28 /* Extensions.swift */; };
+		A80F8BDE2C5E408500CABD28 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD42C5E408400CABD28 /* Client.swift */; };
+		A80F8BDF2C5E408500CABD28 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD62C5E408400CABD28 /* APIEndpoint.swift */; };
+		A80F8BE02C5E408500CABD28 /* DrawEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD72C5E408400CABD28 /* DrawEndpoint.swift */; };
+		A80F8BE12C5E408500CABD28 /* DrawService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD92C5E408400CABD28 /* DrawService.swift */; };
+		A80F8BE32C5E6DBF00CABD28 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,15 @@
 		A80F8BBA2C5E296C00CABD28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A80F8BBC2C5E296D00CABD28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80F8BBF2C5E296D00CABD28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A80F8BCA2C5E3CA000CABD28 /* RootTabRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabRouter.swift; sourceTree = "<group>"; };
+		A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A80F8BD22C5E408400CABD28 /* DrawModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawModel.swift; sourceTree = "<group>"; };
+		A80F8BD32C5E408400CABD28 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A80F8BD42C5E408400CABD28 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		A80F8BD62C5E408400CABD28 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		A80F8BD72C5E408400CABD28 /* DrawEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawEndpoint.swift; sourceTree = "<group>"; };
+		A80F8BD92C5E408400CABD28 /* DrawService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawService.swift; sourceTree = "<group>"; };
+		A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +69,14 @@
 		A80F8BB72C5E296C00CABD28 /* GreekKino */ = {
 			isa = PBXGroup;
 			children = (
+				A80F8BCE2C5E408400CABD28 /* Client */,
+				A80F8BCA2C5E3CA000CABD28 /* RootTabRouter.swift */,
+				A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */,
 				A80F8BB82C5E296C00CABD28 /* GreekKinoApp.swift */,
 				A80F8BBA2C5E296C00CABD28 /* ContentView.swift */,
 				A80F8BBC2C5E296D00CABD28 /* Assets.xcassets */,
 				A80F8BBE2C5E296D00CABD28 /* Preview Content */,
+				A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */,
 			);
 			path = GreekKino;
 			sourceTree = "<group>";
@@ -65,6 +87,43 @@
 				A80F8BBF2C5E296D00CABD28 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A80F8BCE2C5E408400CABD28 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BCF2C5E408400CABD28 /* Models */,
+				A80F8BD32C5E408400CABD28 /* Extensions.swift */,
+				A80F8BD42C5E408400CABD28 /* Client.swift */,
+				A80F8BD52C5E408400CABD28 /* API */,
+				A80F8BD82C5E408400CABD28 /* Service */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		A80F8BCF2C5E408400CABD28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BD22C5E408400CABD28 /* DrawModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A80F8BD52C5E408400CABD28 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BD62C5E408400CABD28 /* APIEndpoint.swift */,
+				A80F8BD72C5E408400CABD28 /* DrawEndpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A80F8BD82C5E408400CABD28 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BD92C5E408400CABD28 /* DrawService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +197,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80F8BBB2C5E296C00CABD28 /* ContentView.swift in Sources */,
+				A80F8BE02C5E408500CABD28 /* DrawEndpoint.swift in Sources */,
+				A80F8BCC2C5E3CA000CABD28 /* RootTabRouter.swift in Sources */,
+				A80F8BDD2C5E408500CABD28 /* Extensions.swift in Sources */,
+				A80F8BE12C5E408500CABD28 /* DrawService.swift in Sources */,
+				A80F8BE32C5E6DBF00CABD28 /* HomeView.swift in Sources */,
+				A80F8BCD2C5E3CA000CABD28 /* RootTabView.swift in Sources */,
+				A80F8BDC2C5E408500CABD28 /* DrawModel.swift in Sources */,
 				A80F8BB92C5E296C00CABD28 /* GreekKinoApp.swift in Sources */,
+				A80F8BDE2C5E408500CABD28 /* Client.swift in Sources */,
+				A80F8BDF2C5E408500CABD28 /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
