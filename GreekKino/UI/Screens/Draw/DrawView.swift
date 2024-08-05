@@ -17,7 +17,11 @@ struct DrawView: View {
         static let ballsCountText = "Broj izabranih kuglica: "
         static let timeRemainingText = "Preostalo vreme za uplatu: "
     }
+    
     @StateObject var viewModel: DrawViewModel
+    @State var countDown = ""
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     private var rows: [GridItem] {
         Array(repeating: GridItem(.fixed(Constants.gridItemSize),
                                   spacing: Constants.gridItemSpacing),
@@ -29,7 +33,10 @@ struct DrawView: View {
             VStack(alignment: .leading) {
                 Text(Constants.quotaText)
                 Text("\(Constants.ballsCountText)\(viewModel.selectedCount)")
-                Text("\(Constants.timeRemainingText)\(viewModel.item.drawTime)")
+                Text("\(Constants.timeRemainingText)\(countDown)")
+                    .onReceive(timer) { time in
+                        countDown = viewModel.countDown
+                    }
                 
                 BallView(rowsCount: Constants.rowsCount, viewModel: viewModel)
             }

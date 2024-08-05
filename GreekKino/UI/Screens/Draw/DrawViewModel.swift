@@ -15,16 +15,29 @@ struct DrawItem: Hashable {
 class DrawViewModel: ObservableObject {
     enum Constants {
         static let ballsRange = (1...80)
+        static let dateMonthHourMin = "dd.MM. HH.mm"
+        static let hoursMinutesSeconds = "HH:mm:ss"
     }
+    
     let item: DrawItem
     @Published var balls: [BallItem] = []
+    let formatter: CustomDateFormatter
     
     var selectedCount: Int {
         balls.filter { $0.isSelected }.count
     }
     
-    init(item: DrawItem, balls: [BallItem] = []) {
+    var drawTimeString: String {
+        formatter.dateString(from: item.drawTime, dateFormat: Constants.dateMonthHourMin)
+    }
+    
+    var countDown: String {
+        formatter.countDown(from: item.drawTime, dateFormat: Constants.hoursMinutesSeconds)
+    }
+    
+    init(item: DrawItem, balls: [BallItem] = [], formatter: CustomDateFormatter = CustomDateFormatter()) {
         self.item = item
+        self.formatter = formatter
         self.balls = balls.isEmpty ? generateBalls() : balls
     }
     

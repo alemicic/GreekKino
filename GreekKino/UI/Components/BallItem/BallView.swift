@@ -27,8 +27,8 @@ struct BallView: View {
         static let drawCountText = "Broj kola: "
     }
     
-    var rows: [GridItem]
-    var viewModel: DrawViewModel
+    let rows: [GridItem]
+    let viewModel: DrawViewModel
     
     init(rowsCount: Int, viewModel: DrawViewModel) {
         self.rows = Array(repeating: GridItem(.fixed(Constants.gridItemSize), spacing: Constants.gridColumnSpacing), count: rowsCount)
@@ -37,8 +37,9 @@ struct BallView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(Constants.drawTimeText)\(viewModel.item.drawTime)")
+            Text("\(Constants.drawTimeText)\(viewModel.drawTimeString)")
             Text("\(Constants.drawCountText)\(viewModel.item.drawId)")
+            
             LazyHGrid(rows: rows, spacing: Constants.gridRowSpacing) {
                 ForEach(Array(zip(viewModel.balls.indices, viewModel.balls)), id: \.0) { index, ball in
                     Button(action: {

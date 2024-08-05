@@ -16,7 +16,7 @@ struct HomeView: View {
     }
     
     @StateObject var viewModel: HomeViewModel
-    var router: HomeRoutable
+    let router: HomeRoutable
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -36,7 +36,7 @@ struct HomeView: View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 0) {
                 ForEach(viewModel.items, id: \.drawId) { item in
-                    DrawItemView(item: item, action: router.presentDrawScreen)
+                    DrawItemView(item: item, formatter: CustomDateFormatter(), action: router.presentDrawScreen)
                 }
             }
         }

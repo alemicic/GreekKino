@@ -14,9 +14,11 @@ protocol DrawServiceProtocol {
 
 class DrawService: DrawServiceProtocol, ObservableObject {
     let client: Client<DrawEndpoint>
+    let mapper: DrawMapper
     
-    init(client: Client<DrawEndpoint>) {
+    init(client: Client<DrawEndpoint>, mapper: DrawMapper = DrawMapper()) {
         self.client = client
+        self.mapper = mapper
     }
     
     func getUpcomingDraws() async throws -> [DrawItem] {
@@ -25,7 +27,7 @@ class DrawService: DrawServiceProtocol, ObservableObject {
         let drawItems: [DrawItem] = drawModels.compactMap { [weak self] model in
             guard let self = self else { return nil }
             
-            return mapDrawModelToItem(model: model)
+            return self.mapper.mapDrawModelToItem(model: model)
         }
         
         return drawItems
@@ -37,24 +39,9 @@ class DrawService: DrawServiceProtocol, ObservableObject {
         let resultItems: [ResultItem] = contentModel.first?.content.compactMap { [weak self] model in
             guard let self = self else { return nil }
             
-            return mapResultModelToItem(model: model)
+            return self.mapper.mapResultModelToItem(model: model)
         } ?? []
         
         return resultItems
-    }
-    
-    func mapDrawModelToItem(model: DrawModel) -> DrawItem {
-        DrawItem(drawTime: model.drawTime, drawId: model.drawId)
-    }
-    
-    func mapResultModelToItem(model: ResultModel) -> ResultItem {
-        let drawItem = DrawItem(drawTime: model.drawTime,
-                                drawId: model.drawId)
-        
-        let ballItems = model.winningNumbers.list.map {
-            BallItem(id: $0, isSelected: true)
-        }
-        
-        return ResultItem(draw: drawItem, balls: ballItems)
     }
 }

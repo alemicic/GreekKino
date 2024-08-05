@@ -28,6 +28,8 @@
 		A80F8BFA2C61027D00CABD28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BF92C61027D00CABD28 /* HomeViewModel.swift */; };
 		A80F8BFC2C6102B300CABD28 /* DrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BFB2C6102B300CABD28 /* DrawViewModel.swift */; };
 		A80F8C022C6103D900CABD28 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8C012C6103D900CABD28 /* ResultsViewModel.swift */; };
+		A80F8C052C617AAD00CABD28 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8C042C617AAD00CABD28 /* CustomDateFormatter.swift */; };
+		A80F8C072C617DFD00CABD28 /* DrawMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8C062C617DFD00CABD28 /* DrawMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		A80F8BF92C61027D00CABD28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A80F8BFB2C6102B300CABD28 /* DrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewModel.swift; sourceTree = "<group>"; };
 		A80F8C012C6103D900CABD28 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
+		A80F8C042C617AAD00CABD28 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		A80F8C062C617DFD00CABD28 /* DrawMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		A80F8BB72C5E296C00CABD28 /* GreekKino */ = {
 			isa = PBXGroup;
 			children = (
+				A80F8C032C617AA000CABD28 /* Util */,
 				A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */,
 				A80F8BB82C5E296C00CABD28 /* GreekKinoApp.swift */,
 				A80F8BE92C5F8C5000CABD28 /* Routing */,
@@ -167,7 +172,6 @@
 			children = (
 				A80F8BFE2C61030B00CABD28 /* BallItem */,
 				A80F8BFD2C6102FF00CABD28 /* DrawItem */,
-				A80F8BF02C60C36100CABD28 /* DrawItemView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,6 +222,7 @@
 		A80F8BFD2C6102FF00CABD28 /* DrawItem */ = {
 			isa = PBXGroup;
 			children = (
+				A80F8BF02C60C36100CABD28 /* DrawItemView.swift */,
 			);
 			path = DrawItem;
 			sourceTree = "<group>";
@@ -228,6 +233,15 @@
 				A80F8BF32C61020500CABD28 /* BallView.swift */,
 			);
 			path = BallItem;
+			sourceTree = "<group>";
+		};
+		A80F8C032C617AA000CABD28 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8C042C617AAD00CABD28 /* CustomDateFormatter.swift */,
+				A80F8C062C617DFD00CABD28 /* DrawMapper.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,10 +315,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80F8BFA2C61027D00CABD28 /* HomeViewModel.swift in Sources */,
+				A80F8C072C617DFD00CABD28 /* DrawMapper.swift in Sources */,
 				A80F8BBB2C5E296C00CABD28 /* ContentView.swift in Sources */,
 				A80F8BE02C5E408500CABD28 /* DrawEndpoint.swift in Sources */,
 				A80F8BDD2C5E408500CABD28 /* Extensions.swift in Sources */,
 				A80F8BF42C61020500CABD28 /* BallView.swift in Sources */,
+				A80F8C052C617AAD00CABD28 /* CustomDateFormatter.swift in Sources */,
 				A80F8BE12C5E408500CABD28 /* DrawService.swift in Sources */,
 				A80F8BFC2C6102B300CABD28 /* DrawViewModel.swift in Sources */,
 				A80F8BF12C60C36100CABD28 /* DrawItemView.swift in Sources */,

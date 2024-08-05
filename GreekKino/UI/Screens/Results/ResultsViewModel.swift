@@ -21,7 +21,7 @@ class ResultsViewModel: ObservableObject {
         fetchItems()
     }
     
-    func fetchItems(){
+    func fetchItems() {
         Task { [weak self] in
             guard let self = self else {
                 return
@@ -29,6 +29,7 @@ class ResultsViewModel: ObservableObject {
             self.items = try await self.service.getDraws(for: Constants.dateString)
         }
     }
+    
     func resultItem(from resultModel: ResultModel) -> ResultItem {
         let drawItem = DrawItem(drawTime: resultModel.drawTime,
                                 drawId: resultModel.drawId)
