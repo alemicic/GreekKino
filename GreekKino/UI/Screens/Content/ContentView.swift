@@ -15,6 +15,10 @@ struct ContentView: View {
 }
 
 struct WebView: UIViewRepresentable {
+    enum Constants {
+        static let webViewUrlString = "https://www.mozzartbet.com/sr/lotto-animation/26#/"
+    }
+    
     let webView: WKWebView
     
     init() {
@@ -26,8 +30,9 @@ struct WebView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        if let url = URL(string: "https://www.mozzartbet.com/sr/lotto-animation/26#/") {
-            webView.load(URLRequest(url: url))
+        guard let url = URL(string: Constants.webViewUrlString) else {
+            return
         }
+        webView.load(URLRequest(url: url))
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 enum DrawEndpoint: APIEndpoint {
     case upcomingDraws
-    case getDraw//(Int)
+    case getDraw
     case drawDate(from: String, to: String)
     
     var baseURL: URL? {

@@ -31,8 +31,8 @@ struct RootTabView: View {
                 HomeView(viewModel: HomeViewModel(service: viewModel.drawService), router: router)
                     .navigationDestination(for: ScreenNavigation.self) { screen in
                         switch screen {
-                            case .draw(drawModel: let drawModel):
-                                DrawView(viewModel: DrawViewModel(item: drawModel))
+                            case .draw(drawItem: let drawItem):
+                                DrawView(viewModel: DrawViewModel(item: drawItem))
                         }
                     }
             }
@@ -49,7 +49,7 @@ struct RootTabView: View {
                 }
                 .tag(Tab.live)
             
-            ResultsView(viewModel: ResultsViewModel())
+            ResultsView(viewModel: ResultsViewModel(service: viewModel.drawService))
                 .tabItem {
                     Label("Results",
                           systemImage: "list.bullet.clipboard.fill")

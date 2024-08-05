@@ -11,7 +11,6 @@
 		A80F8BBB2C5E296C00CABD28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BBA2C5E296C00CABD28 /* ContentView.swift */; };
 		A80F8BBD2C5E296D00CABD28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80F8BBC2C5E296D00CABD28 /* Assets.xcassets */; };
 		A80F8BC02C5E296D00CABD28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80F8BBF2C5E296D00CABD28 /* Preview Assets.xcassets */; };
-		A80F8BCC2C5E3CA000CABD28 /* RootTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BCA2C5E3CA000CABD28 /* RootTabRouter.swift */; };
 		A80F8BCD2C5E3CA000CABD28 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */; };
 		A80F8BDC2C5E408500CABD28 /* DrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD22C5E408400CABD28 /* DrawModel.swift */; };
 		A80F8BDD2C5E408500CABD28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BD32C5E408400CABD28 /* Extensions.swift */; };
@@ -25,6 +24,10 @@
 		A80F8BED2C60968B00CABD28 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BEC2C60968B00CABD28 /* ResultsView.swift */; };
 		A80F8BEF2C609E3A00CABD28 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BEE2C609E3A00CABD28 /* ResultModel.swift */; };
 		A80F8BF12C60C36100CABD28 /* DrawItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BF02C60C36100CABD28 /* DrawItemView.swift */; };
+		A80F8BF42C61020500CABD28 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BF32C61020500CABD28 /* BallView.swift */; };
+		A80F8BFA2C61027D00CABD28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BF92C61027D00CABD28 /* HomeViewModel.swift */; };
+		A80F8BFC2C6102B300CABD28 /* DrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8BFB2C6102B300CABD28 /* DrawViewModel.swift */; };
+		A80F8C022C6103D900CABD28 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F8C012C6103D900CABD28 /* ResultsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,6 @@
 		A80F8BBA2C5E296C00CABD28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A80F8BBC2C5E296D00CABD28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80F8BBF2C5E296D00CABD28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A80F8BCA2C5E3CA000CABD28 /* RootTabRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabRouter.swift; sourceTree = "<group>"; };
 		A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		A80F8BD22C5E408400CABD28 /* DrawModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawModel.swift; sourceTree = "<group>"; };
 		A80F8BD32C5E408400CABD28 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		A80F8BEC2C60968B00CABD28 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		A80F8BEE2C609E3A00CABD28 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		A80F8BF02C60C36100CABD28 /* DrawItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawItemView.swift; sourceTree = "<group>"; };
+		A80F8BF32C61020500CABD28 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
+		A80F8BF92C61027D00CABD28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A80F8BFB2C6102B300CABD28 /* DrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewModel.swift; sourceTree = "<group>"; };
+		A80F8C012C6103D900CABD28 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,16 +85,13 @@
 		A80F8BB72C5E296C00CABD28 /* GreekKino */ = {
 			isa = PBXGroup;
 			children = (
+				A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */,
+				A80F8BB82C5E296C00CABD28 /* GreekKinoApp.swift */,
 				A80F8BE92C5F8C5000CABD28 /* Routing */,
 				A80F8BE62C5F8C0300CABD28 /* UI */,
 				A80F8BCE2C5E408400CABD28 /* Client */,
-				A80F8BCA2C5E3CA000CABD28 /* RootTabRouter.swift */,
-				A80F8BCB2C5E3CA000CABD28 /* RootTabView.swift */,
-				A80F8BB82C5E296C00CABD28 /* GreekKinoApp.swift */,
-				A80F8BBA2C5E296C00CABD28 /* ContentView.swift */,
 				A80F8BBC2C5E296D00CABD28 /* Assets.xcassets */,
 				A80F8BBE2C5E296D00CABD28 /* Preview Content */,
-				A80F8BEC2C60968B00CABD28 /* ResultsView.swift */,
 			);
 			path = GreekKino;
 			sourceTree = "<group>";
@@ -151,8 +154,10 @@
 		A80F8BE72C5F8C0A00CABD28 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */,
-				A80F8BE42C5F7C0100CABD28 /* DrawView.swift */,
+				A80F8BF82C61025F00CABD28 /* Content */,
+				A80F8BF72C61025A00CABD28 /* Results */,
+				A80F8BF62C61025300CABD28 /* Draw */,
+				A80F8BF52C61024B00CABD28 /* Home */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -160,6 +165,8 @@
 		A80F8BE82C5F8C1000CABD28 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A80F8BFE2C61030B00CABD28 /* BallItem */,
+				A80F8BFD2C6102FF00CABD28 /* DrawItem */,
 				A80F8BF02C60C36100CABD28 /* DrawItemView.swift */,
 			);
 			path = Components;
@@ -171,6 +178,56 @@
 				A80F8BEA2C5F8C6300CABD28 /* Router.swift */,
 			);
 			path = Routing;
+			sourceTree = "<group>";
+		};
+		A80F8BF52C61024B00CABD28 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BE22C5E6DBF00CABD28 /* HomeView.swift */,
+				A80F8BF92C61027D00CABD28 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A80F8BF62C61025300CABD28 /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BE42C5F7C0100CABD28 /* DrawView.swift */,
+				A80F8BFB2C6102B300CABD28 /* DrawViewModel.swift */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		A80F8BF72C61025A00CABD28 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BEC2C60968B00CABD28 /* ResultsView.swift */,
+				A80F8C012C6103D900CABD28 /* ResultsViewModel.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		A80F8BF82C61025F00CABD28 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BBA2C5E296C00CABD28 /* ContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		A80F8BFD2C6102FF00CABD28 /* DrawItem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DrawItem;
+			sourceTree = "<group>";
+		};
+		A80F8BFE2C61030B00CABD28 /* BallItem */ = {
+			isa = PBXGroup;
+			children = (
+				A80F8BF32C61020500CABD28 /* BallView.swift */,
+			);
+			path = BallItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,11 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80F8BFA2C61027D00CABD28 /* HomeViewModel.swift in Sources */,
 				A80F8BBB2C5E296C00CABD28 /* ContentView.swift in Sources */,
 				A80F8BE02C5E408500CABD28 /* DrawEndpoint.swift in Sources */,
-				A80F8BCC2C5E3CA000CABD28 /* RootTabRouter.swift in Sources */,
 				A80F8BDD2C5E408500CABD28 /* Extensions.swift in Sources */,
+				A80F8BF42C61020500CABD28 /* BallView.swift in Sources */,
 				A80F8BE12C5E408500CABD28 /* DrawService.swift in Sources */,
+				A80F8BFC2C6102B300CABD28 /* DrawViewModel.swift in Sources */,
 				A80F8BF12C60C36100CABD28 /* DrawItemView.swift in Sources */,
 				A80F8BE32C5E6DBF00CABD28 /* HomeView.swift in Sources */,
 				A80F8BEB2C5F8C6300CABD28 /* Router.swift in Sources */,
@@ -258,6 +317,7 @@
 				A80F8BB92C5E296C00CABD28 /* GreekKinoApp.swift in Sources */,
 				A80F8BED2C60968B00CABD28 /* ResultsView.swift in Sources */,
 				A80F8BDE2C5E408500CABD28 /* Client.swift in Sources */,
+				A80F8C022C6103D900CABD28 /* ResultsViewModel.swift in Sources */,
 				A80F8BDF2C5E408500CABD28 /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

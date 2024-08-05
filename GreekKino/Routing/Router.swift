@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum ScreenNavigation: Hashable {
-    case draw(drawModel: DrawModel)
+    case draw(drawItem: DrawItem)
     
     func hash(into hasher: inout Hasher) {
         switch self {
@@ -20,7 +20,7 @@ enum ScreenNavigation: Hashable {
 }
 
 protocol HomeRoutable {
-    func presentDrawScreen(drawModel: DrawModel)
+    func presentDrawScreen(drawItem: DrawItem)
 }
 
 class Router: ObservableObject {
@@ -28,7 +28,7 @@ class Router: ObservableObject {
 }
 
 extension Router: HomeRoutable {
-    func presentDrawScreen(drawModel: DrawModel) {
-        homeNavigationStack.append(.draw(drawModel: drawModel))
+    func presentDrawScreen(drawItem: DrawItem) {
+        homeNavigationStack.append(.draw(drawItem: drawItem))
     }
 }
