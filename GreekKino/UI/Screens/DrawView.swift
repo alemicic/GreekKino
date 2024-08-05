@@ -19,9 +19,9 @@ class DrawViewModel: ObservableObject {
     var selectedCount: Int {
         balls.filter { $0.isSelected }.count
     }
-    init(item: DrawModel) {
+    init(item: DrawModel, balls: [BallItem] = []) {
         self.item = item
-        self.balls = generateBalls()
+        self.balls = balls.isEmpty ? generateBalls() : balls
     }
     
     func generateBalls() -> [BallItem] {
@@ -37,30 +37,42 @@ struct DrawView: View {
     var body: some View {
         ScrollView() {
             VStack(alignment: .leading) {
-                Text("B.K.      1      2    3     4     5      6       7   ")
-                Text("Kvota  3.75   14   65   275   1350   6500   25000   ")
+                Text("B.K./Kvota | 1/3.75 | 2/14 | 3/65 | 4/275 | 5/1350 | 6/6500 | 7/25000")
                 Text("Broj izabranih kuglica: \(viewModel.selectedCount)")
                 Text("Vreme izvlacenja: \(viewModel.item.drawTime)")
                 Text("Broj kola: \(viewModel.item.drawId)")
                 Text("Preostalo vreme za uplatu: \(viewModel.item.drawTime)")
                 
-                LazyHGrid(rows: rows, spacing: 12) {
-                    ForEach(Array(zip(viewModel.balls.indices, viewModel.balls)), id: \.0) { index, ball in
-                        Button(action: {
-                            viewModel.balls[index].isSelected.toggle()
-                        }) {
-                            Text("\(ball.id)")
-                                .padding(8)
-                                .overlay(
-                                    encircleView(ball: ball)
-                                )
-                        }
-                    }
+                BallsView(rowsCount: 10, viewModel: viewModel)
+            }
+        }
+    }
+}
+
+struct BallsView: View {
+    var rows: [GridItem]
+    var viewModel: DrawViewModel
+    init(rowsCount: Int, viewModel: DrawViewModel) {
+        self.rows = Array(repeating: GridItem(.fixed(20), spacing: 24), count: rowsCount)
+        self.viewModel = viewModel
+    }
+    
+    var body: some View {
+        
+        LazyHGrid(rows: rows, spacing: 12) {
+            ForEach(Array(zip(viewModel.balls.indices, viewModel.balls)), id: \.0) { index, ball in
+                Button(action: {
+                    viewModel.balls[index].isSelected.toggle()
+                }) {
+                    Text("\(ball.id)")
+                        .padding(8)
+                        .overlay(
+                            encircleView(ball: ball)
+                        )
                 }
             }
-            .frame(width: UIScreen.main.bounds.size.width)
-            Spacer()
         }
+        .frame(width: UIScreen.main.bounds.size.width)
     }
     
     @ViewBuilder
@@ -68,6 +80,7 @@ struct DrawView: View {
         if ball.isSelected {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(.red, lineWidth: 5)
+                .frame(width: 30, height: 30)
         }
     }
 }

@@ -15,17 +15,16 @@ struct ContentView: View {
 }
 
 struct WebView: UIViewRepresentable {
-    
     let webView: WKWebView
     
     init() {
         webView = WKWebView(frame: .zero)
-        
     }
     
     func makeUIView(context: Context) -> WKWebView {
-        return webView
+        webView
     }
+    
     func updateUIView(_ uiView: WKWebView, context: Context) {
         if let url = URL(string: "https://www.mozzartbet.com/sr/lotto-animation/26#/") {
             webView.load(URLRequest(url: url))

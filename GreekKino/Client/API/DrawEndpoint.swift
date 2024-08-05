@@ -10,7 +10,7 @@ import Foundation
 enum DrawEndpoint: APIEndpoint {
     case upcomingDraws
     case getDraw//(Int)
-    case drawDate
+    case drawDate(from: Date, to: Date)
     
     var baseURL: URL? {
         return URL(string: "https://api.opap.gr/draws/v3.0/1100")
@@ -36,8 +36,11 @@ enum DrawEndpoint: APIEndpoint {
     
     var parameters: [String: Any]? {
         switch self {
-            case .upcomingDraws, .getDraw, .drawDate:
+            case .upcomingDraws, .getDraw:
                 return ["" : ""]
+            case .drawDate(let fromDate, let toDate):
+                return ["{fromDate}" : "\(fromDate)",
+                        "{toDate}" : "\(toDate)"]
         }
     }
 }

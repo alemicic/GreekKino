@@ -16,13 +16,8 @@ class HomeViewModel: ObservableObject {
     }
     
     func fetchItems(){
-        Task {
-            self.items = try await Client<DrawEndpoint>().request1(.upcomingDraws)
-            for i in items {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd/MM/YY - HH:mm:ss"
-                let dateString = dateFormatter.string(from: Date(timeIntervalSince1970: i.drawTime/1000))
-            }
+        Task { [weak self] in
+            self?.items = try await Client<DrawEndpoint>().request1(.upcomingDraws)
         }
     }
 }

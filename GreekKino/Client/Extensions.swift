@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias Model = Codable & Equatable
+public typealias Model = Codable & Equatable & Hashable
 
 public extension KeyedDecodingContainer {
     /// Decodes a value of the given type for the given key.
