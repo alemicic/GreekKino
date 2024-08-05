@@ -6,16 +6,26 @@
 //
 
 import Foundation
-import Combine
 
 protocol DrawServiceProtocol {
-    func getUpcomingDraws() async throws -> AnyPublisher<[DrawModel], Error>
+    func getUpcomingDraws() async throws -> [DrawModel]
+    func getDraws(for dateString: String) async throws -> [ResultModel]
 }
 
-class DrawService: DrawServiceProtocol {
-    let client = Client<DrawEndpoint>()
+class DrawService: DrawServiceProtocol, ObservableObject {
+    let client: Client<DrawEndpoint>
     
-    func getUpcomingDraws() -> AnyPublisher<[DrawModel], Error> {
-        return client.request(.upcomingDraws)
+    init(client: Client<DrawEndpoint>) {
+        self.client = client
+    }
+    
+    func getUpcomingDraws() async throws -> [DrawModel] {
+        try await client.request(.upcomingDraws)
+    }
+    
+    func getDraws(for dateString: String) async throws -> [ResultModel] {
+        let results: [ContentModel] = try await client.request(.drawDate(from: dateString, to: dateString))
+        
+        return results.first?.content ?? []
     }
 }

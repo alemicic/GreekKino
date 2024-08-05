@@ -10,8 +10,8 @@ import SwiftUI
 
 enum ScreenNavigation: Hashable {
     case draw(drawModel: DrawModel)
+    
     func hash(into hasher: inout Hasher) {
-        
         switch self {
             case .draw(let value):
                 hasher.combine(value)

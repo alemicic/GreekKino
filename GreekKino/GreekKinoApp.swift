@@ -11,7 +11,7 @@ import SwiftUI
 struct GreekKinoApp: App {
     var body: some Scene {
         WindowGroup {
-            RootTabView()
+            RootTabView(router: Router(), viewModel: RootTabViewModel())
         }
     }
 }

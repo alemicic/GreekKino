@@ -7,11 +7,31 @@
 
 import Foundation
 
+struct ContentModel: Model {
+    let content: [ResultModel]
+    
+    enum Keys: String, CodingKey {
+        case content = "content"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: Keys.self)
+        
+        self.content = try container.decodeIfPresent([ResultModel].self, forKey: .content, fallback: [])
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: Keys.self)
+        
+        try container.encode(self.content, forKey: .content)
+    }
+}
+
 struct ResultModel: Model {
     let gameId: Int
     let drawId: Int
     let drawTime: Double
-    let winningNumbers: [Int]
+    let winningNumbers: WinningNumbers
     
     enum Keys: String, CodingKey {
         case gameId = "gameId"
@@ -26,7 +46,7 @@ struct ResultModel: Model {
         self.gameId = try container.decodeIfPresent(Int.self, forKey: .gameId, fallback: -1)
         self.drawId = try container.decodeIfPresent(Int.self, forKey: .drawId, fallback: -1)
         self.drawTime = try container.decodeIfPresent(Double.self, forKey: .drawTime, fallback: -1)
-        self.winningNumbers = try container.decodeIfPresent([Int].self, forKey: .winningNumbers, fallback: [])
+        self.winningNumbers = try container.decodeIfPresent(WinningNumbers.self, forKey: .winningNumbers, fallback: WinningNumbers(list: []))
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -39,3 +59,26 @@ struct ResultModel: Model {
     }
 }
 
+struct WinningNumbers: Model {
+    let list: [Int]
+    
+    enum Keys: String, CodingKey {
+        case list = "list"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: Keys.self)
+        
+        self.list = try container.decodeIfPresent([Int].self, forKey: .list, fallback: [])
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: Keys.self)
+        
+        try container.encode(self.list, forKey: .list)
+    }
+    
+    public init(list: [Int]) {
+        self.list = list
+    }
+}

@@ -7,17 +7,28 @@
 
 import SwiftUI
 
+class RootTabViewModel: ObservableObject {
+    @Published var client: Client<DrawEndpoint>
+    var drawService: DrawService
+    
+    init(client: Client<DrawEndpoint> = Client<DrawEndpoint>()) {
+        self.client = client
+        self.drawService = DrawService(client: client)
+    }
+}
+
 struct RootTabView: View {
     enum Tab {
         case home, live, results
     }
     
-    @StateObject var router = Router()
+    @StateObject var router: Router
+    @StateObject var viewModel: RootTabViewModel
     
     var body: some View {
         TabView() {
             NavigationStack(path: $router.homeNavigationStack) {
-                HomeView(viewModel: HomeViewModel(), router: router)
+                HomeView(viewModel: HomeViewModel(service: viewModel.drawService), router: router)
                     .navigationDestination(for: ScreenNavigation.self) { screen in
                         switch screen {
                             case .draw(drawModel: let drawModel):
@@ -38,7 +49,7 @@ struct RootTabView: View {
                 }
                 .tag(Tab.live)
             
-            ContentView()
+            ResultsView(viewModel: ResultsViewModel())
                 .tabItem {
                     Label("Results",
                           systemImage: "list.bullet.clipboard.fill")
@@ -46,7 +57,4 @@ struct RootTabView: View {
                 .tag(Tab.results)
         }
     }
-}
-#Preview {
-    RootTabView()
 }

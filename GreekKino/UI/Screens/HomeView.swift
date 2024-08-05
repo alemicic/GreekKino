@@ -10,14 +10,18 @@ import SwiftUI
 @MainActor
 class HomeViewModel: ObservableObject {
     @Published var items: [DrawModel] = []
+    let service: DrawService
     
-    init() {
+    init(service: DrawService) {
+        self.service = service
         fetchItems()
     }
     
     func fetchItems(){
         Task { [weak self] in
-            self?.items = try await Client<DrawEndpoint>().request1(.upcomingDraws)
+            if let self = self {
+                self.items = try await self.service.getUpcomingDraws()
+            }
         }
     }
 }
@@ -46,39 +50,5 @@ struct HomeView: View {
                 DrawItemView(item: item, action: router.presentDrawScreen)
             }
         }
-    }
-}
-
-struct DrawItemView: View {
-    var item: DrawModel
-    var action: (DrawModel) -> Void
-    
-    var body: some View {
-        HStack(spacing: 0) {
-            Text(time())
-            Spacer()
-            Text(countDown())
-        }
-        .padding(8)
-        .background(.black)
-        .foregroundStyle(.white)
-        .onTapGesture {
-            action(item)
-        }
-    }
-    
-    func time() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let dateString = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(item.drawTime / 1000)))
-        return dateString
-    }
-    
-    func countDown() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "mm:ss"
-        let delta = Date.now.timeIntervalSince1970.distance(to: item.drawTime / 1000)
-        let dateString = dateFormatter.string(from: Date(timeIntervalSince1970: delta))
-        return dateString
     }
 }
